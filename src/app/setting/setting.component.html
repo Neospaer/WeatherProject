@@ -1,0 +1,34 @@
+<main>
+  <div class="unit">Обозначение</div>
+
+  <div class="form-group">
+    <label for="temperatureUnit">Температура:</label>
+    <select id="temperatureUnit" [(ngModel)]="temperatureUnit" (ngModelChange)="updateSettings()">
+      <option value="C">°C</option>
+      <option value="F">°F</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="windSpeedUnit">Скорость ветра:</label>
+    <select id="windSpeedUnit" [(ngModel)]="windSpeedUnit" (ngModelChange)="updateSettings()">
+      <option value="kph">kp/h</option>
+      <option value="mph">mp/h</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="pressureUnit">Давление:</label>
+    <select id="pressureUnit" [(ngModel)]="pressureUnit" (ngModelChange)="updateSettings()">
+      <option value="mb">mbar</option>
+      <option value="in">in</option>
+    </select>
+  </div>
+
+  <div class="unit">Дополнение</div>
+
+  <div class="content">
+    <div class="about">About</div>
+    <div class="policy">Privacy policy</div>
+  </div>
+</main>

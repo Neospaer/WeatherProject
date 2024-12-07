@@ -1,0 +1,26 @@
+<main>
+  <div class="container">
+    <div class="input-container">
+      <img src="assets/images/search.svg" alt="search" class="search-icon"/>
+      <input
+        type="text"
+        [(ngModel)]="inputCity"
+        placeholder="Search Your City"
+        class="form-control mb-3 search-input"
+        (keydown.enter)="fetchWeather(inputCity)"
+      />
+    </div>
+    <div *ngIf="cityWeatherList.length > 0" class="city-list">
+      <div class="city-card" *ngFor="let city of cityWeatherList" (click)="onCitySelected(city)">
+        <div class="weather-details">
+          <img [src]="city.weather.current.condition.icon" alt="Weather Icon" class="weather-icon img-fluid"/>
+          <p class="weather-condition">{{ city.weather.current.condition.text }}</p>
+        </div>
+        <div class="city-info">
+          <p>{{ city.name }}</p>
+          <p>{{ getTemperatureMinDay(city.weather) }}/{{ getTemperatureMaxDay(city.weather) }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
